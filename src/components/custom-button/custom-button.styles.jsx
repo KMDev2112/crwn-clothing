@@ -11,6 +11,18 @@ const buttonStyles = css`
   }
 `;
 
+const checkoutButtonStyles = css`
+  background-color: black;
+  color: white;
+  border: none;
+  margin: 20px 0 0;
+  &:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+`;
+
 const invertedButtonStyles = css`
   background-color: white;
   color: black;
@@ -34,6 +46,8 @@ const googleSignInStyles = css`
 const getButtonStyles = props => {
   if (props.isGoogleSignIn) {
     return googleSignInStyles;
+  } else if (props.goToCheckout) {
+    return checkoutButtonStyles;
   }
 
   return props.inverted ? invertedButtonStyles : buttonStyles;
